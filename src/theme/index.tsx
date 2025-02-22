@@ -3,6 +3,8 @@ export const theme = {
     light_100: "#FFFFFF",
     light_50: "#E7E9EE",
     dark_100: "#090909",
+    dark_transparent_70: "rgba(9, 9, 9, 0.7)",
+    dark_blue_100: "#052443",
     dark_blue_70: "#0E3256",
     light_blue_50: "#4572C4",
     light_green_50: "#71AD47",
@@ -11,5 +13,10 @@ export const theme = {
   },
   fonts: {
     primary: "'Roboto', sans-serif",
+  },
+  fontSizes: {
+    small: "12px",
+    medium: "14px",
+    large: "16px",
   },
 };
