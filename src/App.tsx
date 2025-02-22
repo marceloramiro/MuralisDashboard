@@ -1,11 +1,15 @@
+import { BrowserRouter } from "react-router";
 import { ThemeProvider } from "styled-components";
-import { theme } from "./Theme";
+import { theme } from "@/theme";
+import { Routes } from "@/routes";
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <p>Bem vindo</p>
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <Routes />
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 
