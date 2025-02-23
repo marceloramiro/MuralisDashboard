@@ -15,7 +15,6 @@ export const baseTextStyle = css`
 `;
 
 export const MainContainer = styled.div`
-  max-width: 230px;
   flex-grow: 1;
   display: flex;
   padding-block: 20px;

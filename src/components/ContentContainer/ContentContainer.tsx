@@ -2,10 +2,16 @@ import { MainContainer } from "./styles";
 
 interface ContentContainerProps {
   children?: React.ReactNode;
+  isSidebarOpen?: boolean;
 }
 
-function ContentContainer({ children }: ContentContainerProps) {
-  return <MainContainer>{children}</MainContainer>;
+function ContentContainer({
+  isSidebarOpen = true,
+  children,
+}: ContentContainerProps) {
+  return (
+    <MainContainer isSidebarOpen={isSidebarOpen}>{children}</MainContainer>
+  );
 }
 
 export { ContentContainer };
