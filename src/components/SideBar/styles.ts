@@ -1,6 +1,14 @@
 import styled, { css } from "styled-components";
+import { FaHouse } from "react-icons/fa6";
+import { FaFolder } from "react-icons/fa";
 
-const baseTextStyle = css`
+export const baseIconStyle = css`
+  color: ${({ theme }) => theme.colors.light_100};
+  width: 100%;
+  height: 100%;
+`;
+
+export const baseTextStyle = css`
   color: ${({ theme }) => theme.colors.light_100};
   font-size: ${({ theme }) => theme.fontSizes.medium};
   margin: 5px;
@@ -32,4 +40,18 @@ export const UserInfoContainer = styled.div`
   width: 100%;
 `;
 
-export const LinksContainer = styled.div``;
+export const LinksContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 3px;
+  width: 100%;
+`;
+
+export const IconHome = styled(FaHouse)`
+  ${baseIconStyle}
+`;
+
+export const IconFolder = styled(FaFolder)`
+  ${baseIconStyle}
+`;

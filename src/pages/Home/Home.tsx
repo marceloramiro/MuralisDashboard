@@ -1,12 +1,11 @@
-import { SideBar } from "@/components";
-import { ContentContainer, MainContainer } from "./styles";
+import { PageContainer, SideBar, ContentContainer } from "@/components";
 
 function Home() {
   return (
-    <MainContainer>
+    <PageContainer>
       <SideBar />
       <ContentContainer />
-    </MainContainer>
+    </PageContainer>
   );
 }
 
