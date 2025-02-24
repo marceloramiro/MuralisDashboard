@@ -6,6 +6,8 @@ export { ContentContainer } from "./ContentContainer/ContentContainer";
 export { Header } from "./Header/Header";
 export { CardInfoBlock } from "./CardInfoBlock/CardInfoBlock";
 export { Calendar } from "./Calendar/Calendar";
+export { InputText } from "./InputText/InputText";
+export { Select } from "./Select/Select";
 
 export * from "./Charts";
 
