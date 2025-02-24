@@ -6,9 +6,9 @@ import {
   ContentContainer,
   Header,
   BarCharts,
+  CardInfoBlock,
 } from "@/components";
 import {
-  Card,
   DashBoardContainer,
   CardsContainer,
   ChartContainer,
@@ -80,10 +80,14 @@ function Home() {
         <Header onMenuClick={handleToggleSidebar} title="CONTROLE GERAL" />
         <DashBoardContainer>
           <CardsContainer>
-            <Card />
-            <Card />
-            <Card />
-            <Card color={theme.colors.light_100} />
+            <CardInfoBlock />
+            <CardInfoBlock />
+            <CardInfoBlock />
+            <CardInfoBlock
+              color={"light_100"}
+              title="Total de Inscritos"
+              value={1255}
+            />
           </CardsContainer>
           <ChartContainer>
             <ChartCardContainer>
