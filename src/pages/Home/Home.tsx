@@ -7,6 +7,7 @@ import {
   BarCharts,
   CardInfoBlock,
   DonutChart,
+  AreaCharts,
 } from "@/components";
 import {
   DashBoardContainer,
@@ -15,6 +16,7 @@ import {
   ChartCardContainer,
   ChartCardPieContainer,
   ChartPieCard,
+  ChartAreaContainer,
 } from "./styles";
 
 const data = [
@@ -96,6 +98,9 @@ function Home() {
           <ChartContainer>
             <ChartCardContainer>
               <BarCharts data={data} />
+              <ChartAreaContainer>
+                <AreaCharts data={data} />
+              </ChartAreaContainer>
             </ChartCardContainer>
             <ChartCardPieContainer>
               <ChartPieCard>

@@ -52,3 +52,12 @@ export const ChartCardPieContainer = styled.div`
   display: flex;
   justify-content: flex-end;
 `;
+
+export const ChartAreaContainer = styled.div`
+  max-height: 300px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: ${({ theme }) => theme.colors.light_100};
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.44);
+`;
