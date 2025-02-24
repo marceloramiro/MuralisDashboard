@@ -8,6 +8,7 @@ export { CardInfoBlock } from "./CardInfoBlock/CardInfoBlock";
 export { Calendar } from "./Calendar/Calendar";
 export { InputText } from "./InputText/InputText";
 export { Select } from "./Select/Select";
+export { Button } from "./Button/Button";
 
 export * from "./Charts";
 

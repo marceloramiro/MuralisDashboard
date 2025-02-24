@@ -11,6 +11,8 @@ export const theme = {
     dark_transparent_70: "rgba(9, 9, 9, 0.7)",
     dark_blue_100: "#052443",
     dark_blue_70: "#0E3256",
+    dark_green_50: "#517736",
+    dark_yellow_50: "#9c7a12",
     light_blue_50: "#4572C4",
     light_green_50: "#71AD47",
     light_orange_50: "#FCA215",
