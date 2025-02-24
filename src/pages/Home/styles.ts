@@ -9,8 +9,7 @@ export const DashBoardContainer = styled.div`
   flex-direction: column;
   height: 100%;
   gap: 32px;
-  padding-bottom: 32px;
-  max-width: 1240px;
+  max-width: 944px;
   width: 100%;
   margin: 0 auto;
   margin-top: 32px;
@@ -41,8 +40,9 @@ export const ChartContainer = styled.div`
 `;
 
 export const ChartCard = styled.div`
-  height: 50%;
-  width: 100%;
+  padding: 16px;
+  height: 100%;
+  width: calc(100% - 16px);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.44);
   background-color: ${({ theme }) => theme.colors.light_100};
 `;
