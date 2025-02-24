@@ -14,6 +14,7 @@ export const theme = {
     light_blue_50: "#4572C4",
     light_green_50: "#71AD47",
     light_orange_50: "#FCA215",
+    light_orange_100: "#ff8a1cf8",
     light_yellow_50: "#FFC100",
   },
   fonts: {

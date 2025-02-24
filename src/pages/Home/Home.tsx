@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { PageContainer, SideBar, ContentContainer, Header } from "@/components";
+import { theme } from "@/theme";
+import {
+  PageContainer,
+  SideBar,
+  ContentContainer,
+  Header,
+  BarCharts,
+} from "@/components";
 import {
   Card,
   DashBoardContainer,
@@ -10,7 +17,54 @@ import {
   ChartCardPieContainer,
   ChartPieCard,
 } from "./styles";
-import { theme } from "@/theme";
+
+const data = [
+  {
+    date: "2024-01-01",
+    course_a: 4000,
+    course_b: 2400,
+  },
+  {
+    date: "2024-02-01",
+    course_a: 3000,
+    course_b: 1398,
+  },
+  {
+    date: "2024-03-01",
+    course_a: 2000,
+    course_b: 9800,
+  },
+  {
+    date: "2024-04-01",
+    course_a: 2780,
+    course_b: 3908,
+  },
+  {
+    date: "2024-05-01",
+    course_a: 1890,
+    course_b: 4800,
+  },
+  {
+    date: "2024-06-01",
+    course_a: 2390,
+    course_b: 3800,
+  },
+  {
+    date: "2024-07-01",
+    course_a: 3490,
+    course_b: 4300,
+  },
+  {
+    date: "2024-08-01",
+    course_a: 3490,
+    course_b: 4300,
+  },
+  {
+    date: "2024-09-01",
+    course_a: 3490,
+    course_b: 4300,
+  },
+];
 
 function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -33,7 +87,7 @@ function Home() {
           </CardsContainer>
           <ChartContainer>
             <ChartCardContainer>
-              <ChartCard />
+              <BarCharts data={data} />
               <ChartCard />
             </ChartCardContainer>
             <ChartCardPieContainer>

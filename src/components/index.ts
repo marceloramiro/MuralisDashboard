@@ -5,4 +5,6 @@ export { PageContainer } from "./PageContainer/PageContainer";
 export { ContentContainer } from "./ContentContainer/ContentContainer";
 export { Header } from "./Header/Header";
 
+export * from "./Charts";
+
 export { SIDEBAR_WIDTH } from "./SideBar/constants";
