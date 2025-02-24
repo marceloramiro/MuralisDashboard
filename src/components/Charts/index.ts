@@ -1,1 +1,2 @@
 export { BarCharts } from "./BarCharts/BarCharts";
+export { DonutChart } from "./DonutChart/DonutChart";

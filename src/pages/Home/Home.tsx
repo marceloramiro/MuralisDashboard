@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { theme } from "@/theme";
 import {
   PageContainer,
   SideBar,
@@ -7,12 +6,12 @@ import {
   Header,
   BarCharts,
   CardInfoBlock,
+  DonutChart,
 } from "@/components";
 import {
   DashBoardContainer,
   CardsContainer,
   ChartContainer,
-  ChartCard,
   ChartCardContainer,
   ChartCardPieContainer,
   ChartPieCard,
@@ -66,6 +65,11 @@ const data = [
   },
 ];
 
+const data_percent = [
+  { name: "Curso A", value: 30 },
+  { name: "Curso B", value: 70 },
+];
+
 function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
@@ -92,10 +96,11 @@ function Home() {
           <ChartContainer>
             <ChartCardContainer>
               <BarCharts data={data} />
-              <ChartCard />
             </ChartCardContainer>
             <ChartCardPieContainer>
-              <ChartPieCard />
+              <ChartPieCard>
+                <DonutChart data={data_percent} />
+              </ChartPieCard>
             </ChartCardPieContainer>
           </ChartContainer>
         </DashBoardContainer>
