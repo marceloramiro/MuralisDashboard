@@ -8,6 +8,7 @@ import {
   CardInfoBlock,
   DonutChart,
   AreaCharts,
+  Calendar,
 } from "@/components";
 import {
   DashBoardContainer,
@@ -100,6 +101,7 @@ function Home() {
               <BarCharts data={data} />
               <ChartAreaContainer>
                 <AreaCharts data={data} />
+                <Calendar />
               </ChartAreaContainer>
             </ChartCardContainer>
             <ChartCardPieContainer>

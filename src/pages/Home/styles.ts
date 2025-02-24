@@ -57,7 +57,9 @@ export const ChartAreaContainer = styled.div`
   max-height: 300px;
   height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: flex-start;
   background-color: ${({ theme }) => theme.colors.light_100};
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.44);
+  padding: 8px;
 `;

@@ -1,0 +1,38 @@
+.rmdp-shadow {
+  box-shadow: none !important;
+}
+
+.rmdp-arrow-container:hover {
+  background-color: rgba(220, 220, 220, 0.285) !important;
+}
+.rmdp-arrow {
+  border-color: #333 !important;
+}
+
+.rmdp-week-day {
+  color: #333 !important;
+}
+.rmdp-week-day:first-of-type {
+  color: rgba(221, 10, 10, 0.833) !important;
+}
+
+.rmdp-day span {
+  border-radius: 0px !important;
+  box-shadow: none !important;
+}
+
+.rmdp-day.rmdp-selected span:not(.highlight) {
+  background-color: #0e3256 !important;
+}
+
+.rmdp-day:not(.rmdp-disabled, .rmdp-day-hidden) span:hover {
+  background-color: #0e3256ce !important;
+}
+
+.rmdp-day:first-of-type {
+  color: rgba(221, 10, 10, 0.833) !important;
+}
+
+.rmdp-day.rmdp-today span {
+  background-color: #0e325675 !important;
+}
