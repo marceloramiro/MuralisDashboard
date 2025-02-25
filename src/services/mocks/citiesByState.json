@@ -1,0 +1,7 @@
+{
+  "citiesByState": {
+    "SP": ["Mogi das Cruzes", "Suzano", "Poá", "Guararema"],
+    "RJ": ["Angra dos Reis", "Niterói", "Itaboraí"],
+    "MG": ["Belo Horizonte", "Monte Azul", "Muzambinho"]
+  }
+}

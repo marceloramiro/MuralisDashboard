@@ -1,0 +1,51 @@
+{
+  "totalEntrantsPerMonthAndCourse": [
+    {
+      "date": "2024-01-01",
+      "Course A": 4000,
+      "Course B": 2400
+    },
+    {
+      "date": "2024-02-01",
+      "Course A": 3000,
+      "Course B": 1398,
+      "Course C": 3000
+    },
+    {
+      "date": "2024-03-01",
+      "Course A": 2000,
+      "Course B": 9800,
+      "Course C": 3000
+    },
+    {
+      "date": "2024-04-01",
+      "Course A": 2780,
+      "Course B": 3908
+    },
+    {
+      "date": "2024-05-01",
+      "Course A": 1890,
+      "Course B": 4800
+    },
+    {
+      "date": "2024-06-01",
+      "Course A": 2390,
+      "Course B": 3800
+    },
+    {
+      "date": "2024-07-01",
+      "Course A": 3490,
+      "Course B": 4300
+    },
+    {
+      "date": "2024-08-01",
+      "Course A": 3490,
+      "Course B": 4300
+    },
+    {
+      "date": "2024-09-01",
+      "Course A": 3490,
+      "Course B": 4300
+    }
+  ]
+}

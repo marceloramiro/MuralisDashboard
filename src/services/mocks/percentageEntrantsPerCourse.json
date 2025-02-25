@@ -1,0 +1,6 @@
+{
+  "percentageEntrantsPerCourse": [
+    { "course": "Curso A", "value": 30 },
+    { "course": "Curso B", "value": 70 }
+  ]
+}

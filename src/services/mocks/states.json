@@ -1,0 +1,16 @@
+{
+  "states": [
+    {
+      "name": "São Paulo",
+      "abbreviation": "SP"
+    },
+    {
+      "name": "Rio de Janeiro",
+      "abbreviation": "RJ"
+    },
+    {
+      "name": "Minas Gerais",
+      "abbreviation": "MG"
+    }
+  ]
+}
