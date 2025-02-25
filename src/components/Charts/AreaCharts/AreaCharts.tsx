@@ -51,6 +51,7 @@ function AreaCharts({ data }: BarChartsProps) {
           />
         ))}
         <Legend
+          iconType="circle"
           verticalAlign="top"
           align="left"
           wrapperStyle={{ paddingLeft: "20px" }}

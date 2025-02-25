@@ -12,7 +12,7 @@ import {
   ActiveShape,
   ActiveShapeProps,
 } from "./components/ActiveShape/ActiveShape";
-import { LegendText } from "./styles";
+import { Divider, LegendContainer, LegendText } from "./styles";
 
 const COLORS = [theme.colors.light_orange_50, theme.colors.dark_blue_70];
 
@@ -37,7 +37,7 @@ const DonutChart = ({ data }: DonutChartProps) => {
       maxHeight={300}
       minHeight={250}
     >
-      <PieChart>
+      <PieChart style={{ height: "fit-content" }}>
         <Pie
           activeIndex={activeIndex}
           dataKey={"value"}
@@ -55,11 +55,21 @@ const DonutChart = ({ data }: DonutChartProps) => {
           ))}
         </Pie>
         <Legend
+          iconSize={0}
           layout="vertical"
           verticalAlign="bottom"
           align="center"
-          wrapperStyle={{ transform: "translateY(10px)" }}
-          formatter={(value) => <LegendText>{value}</LegendText>}
+          wrapperStyle={{
+            transform: "translateY(10px)",
+            width: "100%",
+            height: "40%",
+          }}
+          formatter={(value) => (
+            <LegendContainer>
+              <LegendText>{value}</LegendText>
+              <Divider />
+            </LegendContainer>
+          )}
         />
         <Tooltip />
       </PieChart>
