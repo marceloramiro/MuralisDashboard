@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   PageContainer,
   SideBar,
@@ -20,65 +20,72 @@ import {
   ChartAreaContainer,
 } from "./styles";
 
-const data = [
-  {
-    date: "2024-01-01",
-    course_a: 4000,
-    course_b: 2400,
-  },
-  {
-    date: "2024-02-01",
-    course_a: 3000,
-    course_b: 1398,
-  },
-  {
-    date: "2024-03-01",
-    course_a: 2000,
-    course_b: 9800,
-  },
-  {
-    date: "2024-04-01",
-    course_a: 2780,
-    course_b: 3908,
-  },
-  {
-    date: "2024-05-01",
-    course_a: 1890,
-    course_b: 4800,
-  },
-  {
-    date: "2024-06-01",
-    course_a: 2390,
-    course_b: 3800,
-  },
-  {
-    date: "2024-07-01",
-    course_a: 3490,
-    course_b: 4300,
-  },
-  {
-    date: "2024-08-01",
-    course_a: 3490,
-    course_b: 4300,
-  },
-  {
-    date: "2024-09-01",
-    course_a: 3490,
-    course_b: 4300,
-  },
-];
+import {
+  getPercentageEntrantsPerCourse,
+  getTotalEntrantsPerMonthAndCourse,
+  getTotalUsers,
+} from "@/services/dashboard";
 
-const data_percent = [
-  { name: "Curso A", value: 30 },
-  { name: "Curso B", value: 70 },
-];
+type PercentageEntrantsPerCourse = {
+  course: string;
+  value: number;
+};
+
+type TotalEntrantsPerMonthAndCourse = {
+  date: string;
+  [key: string]: number | string;
+};
 
 function Home() {
+  const [totalUsers, setTotalUsers] = useState(0);
+  const [percentageEntrantsPerCourse, setPercentageEntrantsPerCourse] =
+    useState<PercentageEntrantsPerCourse[]>([]);
+  const [totalEntrantsPerMonthAndCourse, setTotalEntrantsPerMonthAndCourse] =
+    useState<TotalEntrantsPerMonthAndCourse[]>([]);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const handleToggleSidebar = () => {
     setIsSidebarOpen((open) => !open);
   };
+
+  const handleGetTotalUsers = async () => {
+    try {
+      const totalUsersResponse = await getTotalUsers();
+      setTotalUsers(totalUsersResponse.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleGetPercentageEntrantsPerCourse = async () => {
+    try {
+      const percentageEntrantsPerCourseResponse =
+        await getPercentageEntrantsPerCourse();
+      setPercentageEntrantsPerCourse(() => [
+        ...percentageEntrantsPerCourseResponse.data,
+      ]);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleGetTotalEntrantsPerMonthAndCourse = async () => {
+    try {
+      const totalEntrantsPerMonthAndCourseResponse =
+        await getTotalEntrantsPerMonthAndCourse();
+      setTotalEntrantsPerMonthAndCourse(() => [
+        ...totalEntrantsPerMonthAndCourseResponse.data,
+      ]);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    handleGetTotalUsers();
+    handleGetPercentageEntrantsPerCourse();
+    handleGetTotalEntrantsPerMonthAndCourse();
+  }, []);
 
   return (
     <PageContainer>
@@ -93,20 +100,20 @@ function Home() {
             <CardInfoBlock
               color={"light_100"}
               title="Total de Inscritos"
-              value={1255}
+              value={totalUsers}
             />
           </CardsContainer>
           <ChartContainer>
             <ChartCardContainer>
-              <BarCharts data={data} />
+              <BarCharts data={totalEntrantsPerMonthAndCourse} />
               <ChartAreaContainer>
-                <AreaCharts data={data} />
+                <AreaCharts data={totalEntrantsPerMonthAndCourse} />
                 <Calendar />
               </ChartAreaContainer>
             </ChartCardContainer>
             <ChartCardPieContainer>
               <ChartPieCard>
-                <DonutChart data={data_percent} />
+                <DonutChart data={percentageEntrantsPerCourse} />
               </ChartPieCard>
             </ChartCardPieContainer>
           </ChartContainer>

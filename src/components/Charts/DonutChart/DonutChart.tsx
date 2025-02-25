@@ -18,7 +18,7 @@ const COLORS = [theme.colors.light_orange_50, theme.colors.dark_blue_70];
 
 interface DonutChartProps {
   data: {
-    name: string;
+    course: string;
     value: number;
   }[];
 }
@@ -41,6 +41,7 @@ const DonutChart = ({ data }: DonutChartProps) => {
         <Pie
           activeIndex={activeIndex}
           dataKey={"value"}
+          nameKey={"course"}
           data={data}
           innerRadius={50}
           outerRadius={80}

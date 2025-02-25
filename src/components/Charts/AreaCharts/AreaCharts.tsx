@@ -7,16 +7,23 @@ import {
 } from "recharts";
 import { theme } from "@/theme";
 import { LegendText } from "./styles";
+import { useMemo } from "react";
+
+const BAR_COLORS = [theme.colors.light_orange_50, theme.colors.dark_blue_70];
 
 interface BarChartsProps {
   data: {
     date: string;
-    course_a: number;
-    course_b: number;
+    [key: string]: number | string;
   }[];
 }
 
 function AreaCharts({ data }: BarChartsProps) {
+  const courseName = useMemo(() => {
+    if (!data[0]) return;
+    return Object?.keys(data[0])?.filter((key) => key !== "date");
+  }, [data]);
+
   return (
     <ResponsiveContainer width="100%" height="100%">
       <AreaChart
@@ -31,22 +38,18 @@ function AreaCharts({ data }: BarChartsProps) {
         }}
       >
         <Tooltip />
-        <Area
-          type="monotone"
-          dataKey="course_a"
-          stackId="1"
-          fillOpacity={1}
-          stroke={theme.colors.light_orange_100}
-          fill={theme.colors.light_orange_50}
-        />
-        <Area
-          type="monotone"
-          dataKey="course_b"
-          stackId="1"
-          fillOpacity={1}
-          stroke={theme.colors.dark_blue_100}
-          fill={theme.colors.dark_blue_70}
-        />
+
+        {courseName?.map((course, index) => (
+          <Area
+            key={course}
+            type="monotone"
+            dataKey={course}
+            stackId="1"
+            fillOpacity={1}
+            stroke={BAR_COLORS[index % BAR_COLORS.length]}
+            fill={BAR_COLORS[index % BAR_COLORS.length]}
+          />
+        ))}
         <Legend
           verticalAlign="top"
           align="left"

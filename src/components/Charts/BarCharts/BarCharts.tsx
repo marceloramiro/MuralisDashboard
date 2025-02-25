@@ -12,16 +12,28 @@ import {
 } from "recharts";
 import { theme } from "@/theme";
 import { LegendText, MainContainer, Title } from "./styles";
+import { useMemo } from "react";
+
+const BAR_COLORS = [theme.colors.light_orange_50, theme.colors.dark_blue_70];
+
+const ACTIVE_BAR_COLORS = [
+  theme.colors.light_orange_100,
+  theme.colors.dark_blue_100,
+];
 
 interface BarChartsProps {
   data: {
     date: string;
-    course_a: number;
-    course_b: number;
+    [key: string]: number | string;
   }[];
 }
 
 function BarCharts({ data }: BarChartsProps) {
+  const courseName = useMemo(() => {
+    if (!data[0]) return;
+    return Object?.keys(data[0])?.filter((key) => key !== "date");
+  }, [data]);
+
   return (
     <MainContainer>
       <Title>Inscritos</Title>
@@ -51,18 +63,19 @@ function BarCharts({ data }: BarChartsProps) {
             wrapperStyle={{ paddingLeft: "20px" }}
             formatter={(value) => <LegendText>{value}</LegendText>}
           />
-          <Bar
-            dataKey="course_a"
-            name={"Curso A"}
-            fill={theme.colors.light_orange_50}
-            activeBar={<Rectangle fill={theme.colors.light_orange_100} />}
-          />
-          <Bar
-            dataKey="course_b"
-            name={"Curso B"}
-            fill={theme.colors.dark_blue_70}
-            activeBar={<Rectangle fill={theme.colors.dark_blue_100} />}
-          />
+          {courseName?.map((course, index) => (
+            <Bar
+              key={course}
+              dataKey={course}
+              name={course}
+              fill={BAR_COLORS[index % BAR_COLORS.length]}
+              activeBar={
+                <Rectangle
+                  fill={ACTIVE_BAR_COLORS[index % ACTIVE_BAR_COLORS.length]}
+                />
+              }
+            />
+          ))}
         </BarChart>
       </ResponsiveContainer>
     </MainContainer>
