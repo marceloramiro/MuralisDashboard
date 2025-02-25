@@ -24,7 +24,7 @@ export const Title = styled.h1`
   text-align: center;
 `;
 
-export const ContentContainer = styled.div`
+export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -36,6 +36,5 @@ export const Footer = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  padding: 16px;
   background-color: ${({ theme }) => theme.colors.light_100};
 `;

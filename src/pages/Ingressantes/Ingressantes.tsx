@@ -7,7 +7,7 @@ import { CreateEntrantButtonContainer, IconButton, Title } from "./styles";
 
 function Ingressantes() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleToggleSidebar = () => {
     setIsSidebarOpen((open) => !open);
@@ -38,7 +38,7 @@ function Ingressantes() {
           justifyContent: "center",
         }}
       >
-        <FormCreateEntrants />
+        <FormCreateEntrants onClose={handleToggleModal} />
       </Modal>
     </PageContainer>
   );
