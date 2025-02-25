@@ -3,18 +3,18 @@ import { citiesByState, states } from "./mocks";
 
 type State = "SP" | "RJ" | "MG";
 
-type GetCityByStateResponse = {
+interface GetCityByStateResponse {
   data: {
     cities: string[];
   };
-};
+}
 
-type GetStatesResponse = {
+interface GetStatesResponse {
   data: {
     name: string;
     abbreviation: string;
   }[];
-};
+}
 
 export const getStates = async (): Promise<GetStatesResponse> => {
   return delayApiCall(states) as Promise<GetStatesResponse>;

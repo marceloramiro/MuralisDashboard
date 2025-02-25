@@ -27,15 +27,15 @@ import {
 } from "@/services/dashboard";
 import { useUser } from "@/hooks";
 
-type PercentageEntrantsPerCourse = {
+interface PercentageEntrantsPerCourse {
   course: string;
   value: number;
-};
+}
 
-type TotalEntrantsPerMonthAndCourse = {
+interface TotalEntrantsPerMonthAndCourse {
   date: string;
   [key: string]: number | string;
-};
+}
 
 function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);

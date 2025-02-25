@@ -5,23 +5,23 @@ import {
   totalEntrantsPerMonthAndCourse,
 } from "./mocks";
 
-type GetTotalUsersResponse = {
+interface GetTotalUsersResponse {
   data: number;
-};
+}
 
-type GetPercentageEntrantsPerCourseResponse = {
+interface GetPercentageEntrantsPerCourseResponse {
   data: {
     course: string;
     value: number;
   }[];
-};
+}
 
-type GetTotalEntrantsPerMonthAndCourseResponse = {
+interface GetTotalEntrantsPerMonthAndCourseResponse {
   data: {
     date: string;
     [key: string]: number | string;
   }[];
-};
+}
 
 export function getTotalUsers(): Promise<GetTotalUsersResponse> {
   return delayApiCall(totalUsers) as Promise<GetTotalUsersResponse>;
