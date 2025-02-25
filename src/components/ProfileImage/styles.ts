@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { TbUserFilled } from "react-icons/tb";
 
 export const MainContainer = styled.div`
+  min-width: 100px;
+  min-height: 100px;
   max-width: 100px;
   max-height: 100px;
   flex-grow: 1;
