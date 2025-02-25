@@ -1,50 +1,21 @@
-# React + TypeScript + Vite
+# Instalação
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Para rodar o projeto é necessário ja ter instalado o [Node.js](https://nodejs.org/en) (20.0+) e um gerenciador de pacotes, [Yarn](https://yarnpkg.com/getting-started/install) ou [Npm](https://nodejs.org/en)
 
-Currently, two official plugins are available:
+**Instalação dos pacotes**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+basta rodar o comando `yarn` ou `npm i` no console dentro da pasta principal do projeto
 
-## Expanding the ESLint configuration
+**Iniciar o projeto**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Yarn: `yarn dev`
 
-- Configure the top-level `parserOptions` property like this:
+Npm: `npm run dev`
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+**Principais tecnologias utilizadas:**
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+| **Build tool**        | [Vite](https://vite.dev/)                                                         |
+| --------------------- | --------------------------------------------------------------------------------- |
+| **Biblioteca**        | [React 19](https://react.dev/)                                                    |
+| **UI**                | [Mui](https://mui.com/core/) / [StyledComponents](https://styled-components.com/) |
+| **Navegação / Rotas** | [react-router](https://reactrouter.com/)                                          |
