@@ -11,6 +11,7 @@ import {
 import { useLocation } from "react-router";
 import { Drawer } from "@mui/material";
 import { theme } from "@/theme";
+import { useUser } from "@/hooks";
 
 interface SideBarProps {
   isOpen?: boolean;
@@ -19,6 +20,7 @@ interface SideBarProps {
 
 function SideBar({ isOpen = true, onClose }: SideBarProps) {
   const location = useLocation();
+  const { user } = useUser();
 
   return (
     <Drawer
@@ -39,8 +41,8 @@ function SideBar({ isOpen = true, onClose }: SideBarProps) {
       <MainContainer>
         <ProfileImage />
         <UserInfoContainer>
-          <UserName>Silva Junior</UserName>
-          <UserEmail> silvajunior@email.com </UserEmail>
+          <UserName>{user.name}</UserName>
+          <UserEmail> {user.email} </UserEmail>
         </UserInfoContainer>
         <LinksContainer>
           <IconLink

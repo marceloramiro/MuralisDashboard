@@ -25,6 +25,7 @@ import {
   getTotalEntrantsPerMonthAndCourse,
   getTotalUsers,
 } from "@/services/dashboard";
+import { useUser } from "@/hooks";
 
 type PercentageEntrantsPerCourse = {
   course: string;
@@ -37,12 +38,14 @@ type TotalEntrantsPerMonthAndCourse = {
 };
 
 function Home() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [totalUsers, setTotalUsers] = useState(0);
   const [percentageEntrantsPerCourse, setPercentageEntrantsPerCourse] =
     useState<PercentageEntrantsPerCourse[]>([]);
   const [totalEntrantsPerMonthAndCourse, setTotalEntrantsPerMonthAndCourse] =
     useState<TotalEntrantsPerMonthAndCourse[]>([]);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const user = useUser();
 
   const handleToggleSidebar = () => {
     setIsSidebarOpen((open) => !open);
@@ -61,9 +64,7 @@ function Home() {
     try {
       const percentageEntrantsPerCourseResponse =
         await getPercentageEntrantsPerCourse();
-      setPercentageEntrantsPerCourse(() => [
-        ...percentageEntrantsPerCourseResponse.data,
-      ]);
+      setPercentageEntrantsPerCourse(percentageEntrantsPerCourseResponse.data);
     } catch (error) {
       console.error(error);
     }
@@ -73,9 +74,9 @@ function Home() {
     try {
       const totalEntrantsPerMonthAndCourseResponse =
         await getTotalEntrantsPerMonthAndCourse();
-      setTotalEntrantsPerMonthAndCourse(() => [
-        ...totalEntrantsPerMonthAndCourseResponse.data,
-      ]);
+      setTotalEntrantsPerMonthAndCourse(
+        totalEntrantsPerMonthAndCourseResponse.data
+      );
     } catch (error) {
       console.error(error);
     }
@@ -85,6 +86,7 @@ function Home() {
     handleGetTotalUsers();
     handleGetPercentageEntrantsPerCourse();
     handleGetTotalEntrantsPerMonthAndCourse();
+    user.handleGetUser();
   }, []);
 
   return (
