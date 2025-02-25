@@ -89,7 +89,7 @@ function Home() {
 
   return (
     <PageContainer>
-      <SideBar isOpen={isSidebarOpen} />
+      <SideBar isOpen={isSidebarOpen} onClose={handleToggleSidebar} />
       <ContentContainer isSidebarOpen={isSidebarOpen}>
         <Header onMenuClick={handleToggleSidebar} title="CONTROLE GERAL" />
         <DashBoardContainer>

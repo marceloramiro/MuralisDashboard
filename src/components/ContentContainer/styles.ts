@@ -16,4 +16,7 @@ export const MainContainer = styled.div<MainContainerProps>`
   transition: margin-left 350ms ease-in-out;
   background-color: ${({ theme }) => theme.colors.light_50};
   margin-left: ${({ isSidebarOpen }) => (isSidebarOpen ? 0 : -SIDEBAR_WIDTH)}px;
+  @media (max-width: 960px) {
+    margin-left: ${-SIDEBAR_WIDTH}px;
+  }
 `;

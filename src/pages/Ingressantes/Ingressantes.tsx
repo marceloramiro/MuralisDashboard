@@ -19,7 +19,7 @@ function Ingressantes() {
 
   return (
     <PageContainer>
-      <SideBar isOpen={isSidebarOpen} />
+      <SideBar isOpen={isSidebarOpen} onClose={handleToggleSidebar} />
       <ContentContainer isSidebarOpen={isSidebarOpen}>
         <Header onMenuClick={handleToggleSidebar} title="INGRESSANTES" />
         <CreateEntrantButtonContainer>

@@ -14,9 +14,10 @@ import { theme } from "@/theme";
 
 interface SideBarProps {
   isOpen?: boolean;
+  onClose?: () => void;
 }
 
-function SideBar({ isOpen = true }: SideBarProps) {
+function SideBar({ isOpen = true, onClose }: SideBarProps) {
   const location = useLocation();
 
   return (
@@ -33,6 +34,7 @@ function SideBar({ isOpen = true }: SideBarProps) {
       variant={"persistent"}
       anchor="left"
       open={isOpen}
+      onClose={onClose}
     >
       <MainContainer>
         <ProfileImage />

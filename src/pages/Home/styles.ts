@@ -24,6 +24,10 @@ export const ChartContainer = styled.div`
   gap: 32px;
   flex-direction: row;
   flex-grow: 1;
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+  }
 `;
 
 export const ChartCard = styled.div`
@@ -40,6 +44,10 @@ export const ChartPieCard = styled.div`
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.44);
   background-color: ${({ theme, color }) =>
     color ? color : theme.colors.light_100};
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+  }
 `;
 
 export const ChartCardContainer = styled.div`
@@ -51,6 +59,11 @@ export const ChartCardContainer = styled.div`
 export const ChartCardPieContainer = styled.div`
   display: flex;
   justify-content: flex-end;
+
+  @media (max-width: 960px) {
+    justify-content: flex-start;
+    padding-bottom: 24px;
+  }
 `;
 
 export const ChartAreaContainer = styled.div`
